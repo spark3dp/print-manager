@@ -25,6 +25,8 @@ When unzipped please edit the localConfig.json file to use this.
 
 <b>To see full documentation of print-manager and download print studio, please request access to the developer portal at
  <a href="https://spark.autodesk.com/developers/" target="_blank">https://spark.autodesk.com/developers/</a>.</b>
+ 
+ To submit contributions back to this project. Please fill in the Contributers Agreement 
 
 
 
