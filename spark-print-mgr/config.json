@@ -1,0 +1,20 @@
+{ 
+	"PORT" : 9998,
+	"logger_options" : {
+        "log_file_name" : "print-manager.log",
+        "log_file_location" : "",
+        "write_to_console" : true
+    },
+    "memory_cleanup_options" : {
+        "delete_jobs_older_than"  : 5,
+        "delete_tasks_older_than" : 5
+    },
+    "data_files_location" : "",
+    "printer_data_files" : "../spark-print-data/",
+    "localhost_only"     : true,
+	"EMBER" : "127.0.0.1",
+    "commit_id" : "0000000000000000000000000000000000000000",
+	"roopa_server_commit" : "3f0d9ca4cbd7f45d6047b5823e1fb421c8fcb824",
+	"roopa_server_timeout" : 120,
+    "device_discovery_services" : ["bonjour", "usb", "serial", "ember", "conveyor"]
+}

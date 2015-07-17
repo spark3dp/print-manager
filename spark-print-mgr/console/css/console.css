@@ -1,0 +1,174 @@
+.form-horizontal .control-label {
+    text-align:left;
+}
+
+.header-box {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: lightgrey;
+    background-color: #e7e7e7;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 64px;
+}
+
+.header-box button {
+    margin-top: 20px;
+}
+
+.header-box .h4 {
+    margin-top: 25px;
+}
+
+.footer-box {
+    background-color: #e7e7e7;
+    padding: 20px;
+}
+
+.main-box {
+    background-color: white;
+    padding: 15px 20px;
+}
+
+.main-page {
+    background-color: #475761;
+}
+
+#printer-details-footer, #printer-add-footer {
+    margin: -15px 0 0 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Printer icons */
+.icon {
+    width: 36px;
+    height: 36px;
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.dremel {
+    background-image: url("../icons/dremel.png");
+}
+
+.type-a {
+    background-image: url("../icons/typeA.png");
+}
+
+.ember {
+    background-image: url("../icons/ember.png");
+}
+
+.ultimaker {
+    background-image: url("../icons/ultimaker2.png");
+}
+
+.replicator2 {
+    background-image: url("../icons/replicator2.png");
+}
+/* Button stylings */
+
+.btn-settings, .btn-settings:active {
+    background-image: url("../icons/Options.png");
+}
+
+.btn-delete, .btn-delete:active {
+    background-image: url("../icons/Delete.png");
+}
+
+.btn-back, .btn-back:active {
+    background-image: url("../icons/Back.png");
+}
+
+.btn-refresh, .btn-refresh:active {
+    background-image: url("../icons/Refresh.png");
+}
+
+.btn-edit, .btn-edit:active {
+    background-image: url("../icons/Edit.png");
+}
+
+.btn-add, .btn-add:active {
+    background-image: url("../icons/Add.png");
+}
+
+.btn-icon.wide {
+    width: 40px;
+}
+
+.btn-icon.large {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-icon {
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 0;
+}
+
+.btn-console-primary {
+    background-color: #3ac7fe;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Table stylings */
+
+#add-printer-row {
+    color: #3ac7fe;
+    font-weight: bold;
+}
+
+.table > tbody > tr > td {
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.table > tbody > tr:last-child > td {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.table > tbody > tr.selected {
+    background-color: #bfebfe;
+}
+
+.edit-printers-table td > div:nth-child(2) {
+    margin-top: 8px;
+}
+
+.list-printers-table td > div:not(:first-child){
+    margin-top: 8px;
+}
+
+/* Custom checkbox stylings */
+input[type=checkbox] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    font-weight: normal;
+}
+
+input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:checked + label span:after {
+    content: '\2713';
+}

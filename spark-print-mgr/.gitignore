@@ -1,0 +1,7 @@
+localConfig.json
+files/
+.DS_Store
+db/
+print_manager.jx
+print_manager.jxp
+*.log

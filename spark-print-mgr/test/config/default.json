@@ -1,0 +1,15 @@
+{
+    "api_tests": {
+        "description": "Runs the API tests on PrintManager directly.  No need to start a server.",
+        "services": [
+            {
+                "name": "default",
+                "target": "app",
+                "app_module_path": "./app.js",
+                "api_prefix": "",
+                "end_points": ["*"]
+            }
+        ],
+        "initializer_module_path": "./test/config/initializer.js"
+    }
+}

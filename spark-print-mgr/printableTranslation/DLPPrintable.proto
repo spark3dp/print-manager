@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package Spark.DLPPrintable;
+
+// When serialized to a file, the DLP printable consists of a
+// little-endian 32-bit magic number (the value 0x5F52BD92), one
+// Header message, followed by a sequence of Slice message.  The
+// "num_slices" field in the header indicates the number of Slice
+// messages to follow.  Each message is prefixed by a "uint32"
+// protobuf-encoded size which indicates the encoded size of the
+// message to follow.  Note that the size may be zero.
+
+message Header
+{
+    // The ID of the PrinterType for which this printable was generated.
+    string printer_type_id = 1;
+
+    // The number of slices stored in this file.
+    uint32 num_slices = 2;
+
+    // The width (in pixels) of the slice images.
+    uint32 image_width = 3;
+
+    // The height (in pixels) of the slice images.
+    uint32 image_height = 4;
+}
+
+
+message Slice
+{
+    // PNG data as a byte string.  This byte string can could be
+    // written without modification to a binary file to make a valid PNG
+    // file.
+    bytes png_data = 1;
+}

@@ -1,0 +1,402 @@
+{
+    "printerTypes": [
+        {
+            "id": "7FAF097F-DB2E-45DC-9395-A30210E789AA",
+            "version": 1,
+            "name": "Ember",
+            "manufacturer": "Autodesk",
+            "model_number": "1.0.0",
+            "registration_url" : null,
+            "icon_id": "data/ember.png",
+            "icon50x50_id": "data/ember50x50.png",
+            "icon100x100_id": "data/ember100x100.png",
+            "technology": "DLP",
+            "default_material_id": "426F14FE-E6AF-496F-BBC7-7D6C0E16861D",
+            "default_profile_id": "34F0E39A-9389-42BA-AB5A-4F2CD59C98E4",
+            "firmware": {
+                "type": "Ember",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "bed_size": [
+                    6.40000000000000,
+                    4.00000000000000,
+                    13.40000000000000
+                ],
+                "bed_offset": [
+                    -3.200000000000000,
+                    -2.000000000000000,
+                    0.000000000000000
+                ],
+                "home_position": [0, 0, 0],
+                "park_position": [0, 0, 0],
+                "bed_file_id": "data/ember.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "image/png+tar.gz",
+                "thumbnail": "image/png",
+                "extension": "tar.gz",
+                "generates_supports": false,
+                "packager_file_id": "data/EmberPackager.lua"
+            },
+            "supported_connections": [
+                {
+                    "type": "bonjour",
+                    "protocol": "_http._tcp",
+                    "info" : {
+                        "port": 3000,
+                        "service_name": "Ember",
+                        "api": {
+                            "name": "SparkPrint",
+                            "version": "1.0.0"
+                        }
+                    }
+                },
+                {
+                    "type": "LAN",
+                    "protocol": "_http._tcp",
+                    "info": {
+                        "port": 3000,
+                        "api": {
+                            "name": "SparkPrint",
+                            "version": "1.0.0"
+                        }
+                    }
+                }
+            ],
+            "preferred_connection": "bonjour",
+            "max_speeds": {
+                "z": 0.1
+            },
+            "software_info": {
+                "name": "Spark Print Studio",
+                "url": "www.spark.autodesk.com"
+            },
+            "printer_capabilities": {},
+            "_files": [
+                "icon_id",
+                "icon50x50_id",
+                "icon100x100_id",
+                "build_volume.bed_file_id",
+                "printable.packager_file_id"
+            ]
+        },
+        {
+            "id": "3F64F6EC-A1DF-44AB-A22E-58C036F2F474",
+            "version": 1,
+            "name": "Idea Builder",
+            "manufacturer": "Dremel 3D",
+            "registration_url" : null,
+            "model_number": "1.0.0",
+            "icon_id": "data/dremel.png",
+            "icon50x50_id": "data/dremel50x50.png",
+            "icon100x100_id": "data/dremel100x100.png",
+            "technology": "FDM",
+            "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
+            "default_profile_id": "CF313AC0-FDE6-467A-9E8B-797F0F35E6A3",
+            "firmware": {
+                "type": "dremel",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "home_position": [0, 0, 0],
+                "park_position": [11.5, 7.5, 14],
+                "bed_size": [
+                    23,
+                    15,
+                    14
+                ],
+                "bed_offset": [
+                    -11.5,
+                    -7.5,
+                    0.0
+                ],
+                "bed_file_id": "data/dremel.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/drm3d",
+                "thumbnail": "image/png",
+                "extension": "g3drem",
+                "generates_supports": false,
+                "packager_data": {
+                    "icon_file_id": "data/DremelPrintableIcon.bmp"
+                }
+            },
+            "supported_connections": [
+                {
+                    "type": "usb",
+                    "protocol": "usb.dremel"
+                }
+            ],
+            "preferred_connection": "usb",
+            "software_info": {
+                "name": "Dremel3D",
+                "url": "https://3dprinter.dremel.com"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 300,
+                "nozzle_max_volume_per_sec": 300,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_lift_z": 0.05,
+                "nozzle_extra_length_on_restart": 0.15,
+                "e_speed_max": 2.0,
+                "nozzle_min_travel_on_retraction": 0.1,
+                "bed_temp_max": 0,
+                "xy_speed_max": 20,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 10,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+                "icon_id",
+                "icon50x50_id",
+                "icon100x100_id",
+                "build_volume.bed_file_id",
+                "printable.packager_data.icon_file_id"
+            ]
+        },
+        {
+            "id": "F2F4B9B6-1D54-4A16-883E-B0385F27380D",
+            "version": 2,
+            "name": "Replicator 2",
+            "manufacturer": "Makerbot",
+            "model_number": "1.0.0",
+            "icon_id": "data/Replicator2.png",
+            "icon50x50_id": "data/replicator250x50.png",
+            "icon100x100_id": "data/replicator2100x100.png",
+            "technology": "FDM",
+            "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
+            "default_profile_id": "BEDD1886-DE64-4E72-9167-76F9E3DE2417",
+            "firmware": {
+                "type": "makerbot",
+                "generation": 4
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "home_position": [29.3, 15.3, 0],
+                "park_position": [29.3, 15.3, 0],
+                "bed_size": [
+                    28.5,
+                    15.3,
+                    15.5
+                ],
+                "bed_offset": [
+                    0,
+                    0,
+                    0
+                ],
+                "bed_file_id": "data/replicator2.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "conveyor",
+                    "protocol": "conveyor"
+                }
+            ],
+            "preferred_connection": "conveyor",
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 300,
+                "nozzle_max_volume_per_sec": 300,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_lift_z": 0.05,
+                "nozzle_extra_length_on_restart": 0.15,
+                "e_speed_max": 3.0,
+                "nozzle_min_travel_on_retraction": 0.1,
+                "bed_temp_max": 0,
+                "xy_speed_max": 20,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 10,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+                "icon_id",
+                "icon50x50_id",
+                "icon100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        },
+        {
+            "id": "8D39294C-FA7A-40F4-AB79-19F506C64097",
+            "version": 1,
+            "name": "Ultimaker 2",
+            "manufacturer": "Ultimaker",
+            "registration_url" : null,
+            "model_number": "2.0.0",
+            "icon_id": "data/ultimaker2.png",
+            "icon50x50_id": "data/ultimaker250x50.png",
+            "icon100x100_id": "data/ultimaker2100x100.png",
+            "technology": "FDM",
+            "default_material_id": "B27DE79C-0459-4B59-87FD-3093313126EF",
+            "default_profile_id": "F3314255-711D-48A9-8CB2-C55CEACF58B7",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "bed_size": [
+                    22.5,
+                    21.0,
+                    20.5
+                ],
+                "bed_offset": [
+                    -11.25,
+                    -10.5,
+                    0.0
+                ],
+                "home_position": [0, 21.5, 0],
+                "park_position": [0, 21, 20.5],
+                "bed_file_id": "data/ultimaker2.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "serial",
+                    "discovery": "serial",
+                    "protocol": "usb.serial",
+                    "baud" : 250000
+                }
+            ],
+            "preferred_connection": "serial",
+            "max_speeds": {
+                "x": 20,
+                "y": 20,
+                "z": 0.01
+            },
+            "software_info": {
+                "name": "Cura",
+                "url": "https://ultimaker.com/en/products/software"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 260,
+                "nozzle_max_volume_per_sec": 300,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.45,
+                "nozzle_lift_z": 0.05,
+                "nozzle_extra_length_on_restart": 0.15,
+                "nozzle_retract_speed": 4,
+                "nozzle_min_travel_on_retraction": 0.1,
+                "bed_temp_max": 100,
+                "xy_speed_max": 30,
+                "z_speed_max": 0.01,
+                "e_speed_max": 2.5,
+                "travel_feed_rate": 10,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+                "icon_id",
+                "icon50x50_id",
+                "icon100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        },
+        {
+            "id": "F2F4B9B6-1D54-4A16-883E-B0385F27380C",
+            "version": 1,
+            "name": "Series 1",
+            "manufacturer": "Type A",
+            "registration_url" : null,
+            "model_number": "2014",
+            "icon_id": "data/TypeA.png",
+            "icon50x50_id": "data/typeA50x50.png",
+            "icon100x100_id": "data/typeA100x100.png",
+            "technology": "FDM",
+            "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
+            "default_profile_id": "75641294-BD6B-44F9-8C34-1DDEB9394296",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "home_position": [0, 0, 0],
+                "park_position": [0, 0, 0],
+                "bed_size": [
+                    30.5,
+                    30.5,
+                    30.5
+                ],
+                "bed_offset": [
+                    -15.2500000000000,
+                    -15.2500000000000,
+                    0.00000000000000000
+                ],
+                "bed_file_id": "data/TypeA.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "bonjour",
+                    "protocol": "_http._tcp",
+                    "info": {
+                        "port": 5000,
+                        "service_name": "Series1",
+                        "api": {
+                            "name": "Octoprint",
+                            "version": " 1.1.0"
+                        }
+                    }
+                }
+            ],
+            "preferred_connection": "bonjour",
+            "software_info": {
+                "name": "Cura",
+                "url": "www.ultimachine.com"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 250,
+                "nozzle_max_volume_per_sec": 300,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.05,
+                "nozzle_lift_z": 0.05,
+                "nozzle_extra_length_on_restart": 0.15,
+                "e_speed_max": 3.0,
+                "nozzle_min_travel_on_retraction": 0.1,
+                "bed_temp_max": 0,
+                "xy_speed_max": 20,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 10.0,
+                "z_axis_feed_rate": 3.0
+            },
+            "_files": [
+                "icon_id",
+                "icon50x50_id",
+                "icon100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        }
+    ]
+}

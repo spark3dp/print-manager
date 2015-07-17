@@ -1,0 +1,1 @@
+print( encodeJSON( getVersion() ) )

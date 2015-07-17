@@ -1,0 +1,60 @@
+<div class="row header-box">
+    <button class="btn btn-icon btn-sm btn-back col-xs-1"
+            ng-click="goToPage('/printers/edit');">
+    </button>
+    <div class="h3 text-center col-xs-8 col-xs-offset-1">Add Printer</div>
+</div>
+
+<div class="row">
+
+    <form name="addPrinterForm" ng-submit="submit(addPrinterForm.$valid)" class="form-horizontal" novalidate>
+        <div class="main-box">
+            <div class="form-group">
+                <label for="printer-type" class="control-label col-xs-4">Printer Type:</label>
+                <div class="col-xs-8">
+                    <select id="printer-type" name="printerType" class="form-control" ng-model="printer.type_id"
+                            ng-options="printerType.id as printerType.name for printerType in printerTypes"
+                            required>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error' : addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched}">
+                <label for="printer-name" class="control-label col-xs-3">Nickname:</label>
+                <div class="col-xs-8 col-xs-offset-1">
+                    <input id="printer-name" name="printerName" class="form-control" type="text" ng-model="printer.printer_name" required>
+                    <p ng-show="addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched"
+                       class="help-block">
+                        A name is required
+                    </p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error' : addPrinterForm.ipAddress.$invalid && !addPrinterForm.ipAddress.$pristine && !addPrinterForm.ipAddress.$untouched}">
+                <label for="ipAddress" class="control-label col-xs-4">IP Address:</label>
+                <div class="col-xs-8">
+                    <input id="ipAddress" name="ipAddress" class="form-control" type="text" ng-model="printer.address" required
+                           ng-pattern="/^(?:http://)?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?::\d{1,5})?$/">
+                    <p ng-show="addPrinterForm.ipAddress.$invalid && !addPrinterForm.ipAddress.$pristine && !addPrinterForm.ipAddress.$untouched"
+                       class="help-block">
+                        An IP Address is required
+                    </p>
+                    <br>
+                    <p>Find your printer's IP address in the Settings tab of your printer's LCD screen.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="printer-add-footer" class="form-group footer-box">
+            <div class="col-xs-9">
+                <p ng-show="errorMessage"
+                   class="text-danger">
+                    {{errorMessage}}
+                </p>
+            </div>
+            <div class="col-xs-3 pull-right">
+                <button type="submit" class="btn btn-console-primary pull-right" ng-disabled="addPrinterForm.$invalid || requestPending">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

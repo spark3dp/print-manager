@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package Spark.FDMPrintable;
+
+// When serialized to a file, the FDM printable consists of a
+// little-endian 32-bit magic number (the value 0x14C64CAB),
+// one Header message, followed by a sequence of Command messages.
+// Each message is prefixed by a "uint32" protobuf-encoded size
+// which indicates the encoded size of the message to follow.
+// Note that the size may be zero.  The command type END_OF_COMMANDS
+// signifies that last command in the stream.
+
+message Header
+{
+    // The ID of the PrinterType for which this printable was generated.
+    string printer_type_id = 1;
+}
+
+message Command
+{
+    enum CommandType {
+        END_OF_COMMANDS = 0;
+        MOVE = 1;
+        EXTRUDE_MOVE = 2;
+        EXTRUDE = 3;
+        SET_FEED_RATE = 4;
+        SET_TEMP_BED = 5;
+        SET_TEMP_NOZZLE = 6;
+        SET_FAN_SPEED = 7;
+        SET_UNITS = 8;
+        DISABLE_MOTORS = 9;
+        SET_MODE_XYZ = 10;
+        SET_MODE_E = 11;
+        RESET_EXTRUSION_DISTANCE = 12;
+        PAUSE = 13;
+        HOME_AXES = 14;
+        COMMENT = 15;
+        STARTPRINT = 16;
+        ENDPRINT = 17;
+        CUSTOM = 18;
+        PROGRESS = 19;
+        ESTIMATES = 20;
+    }
+
+    enum UnitType {
+        MM = 0;
+        INCH = 1;
+    }
+
+    enum ModeType {
+        ABS = 0;
+        REL = 1;
+    }
+
+    CommandType type = 1;
+
+    repeated float x = 2;
+    repeated float y = 3;
+    repeated float z = 4;
+    repeated float e = 5;
+    repeated float f = 6;
+
+    float nozzle_temp = 7;
+    float bed_temp = 8;
+    uint32 fan_speed = 9;
+    float pause_time = 10;
+    string comment = 11;
+    UnitType units = 12;
+    ModeType mode = 13;
+    bool wait = 14;
+    string custom = 15;
+    float progress = 16;
+    float estimated_print_time = 17;
+    float estimated_material_length = 18;
+}
