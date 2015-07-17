@@ -24,7 +24,7 @@ When unzipped please edit the localConfig.json file to use this.
 6. Go to: http://localhost:9998/printdb/printertypes to see normal execution
 
 <b>To see full documentation of print-manager and download print studio, please request access to the developer portal at
-Spark APIs are current in beta: <a href="https://spark.autodesk.com/developers/" target="_blank">Request access</a>.</b>
+ <a href="https://spark.autodesk.com/developers/" target="_blank">https://spark.autodesk.com/developers/</a>.</b>
 
 
 
