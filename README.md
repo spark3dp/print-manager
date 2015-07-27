@@ -28,6 +28,7 @@ When unzipped please edit the localConfig.json file to use this.
  
  To submit contributions back to this project. Please fill in the Contributers Agreement 
 
+If Building on Windows make sure to install Bonjour SDK from the Apple Store.    
 
 
 
