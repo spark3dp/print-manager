@@ -18,7 +18,7 @@ When unzipped please edit the localConfig.json file to use this.
 {
          "roopaServerPath" : "C:/SPARK/Release/runTime/RoopaServer.app/Contents/MacOS/RoopaServer"
 }
-   The above will work for macos.
+   The above will work for Mac OS.
 4. npm install   
 5. node Server.js (will start server on localhost:9998)  
 6. Go to: http://localhost:9998/printdb/printertypes to see normal execution
@@ -26,7 +26,7 @@ When unzipped please edit the localConfig.json file to use this.
 <b>To see full documentation of print-manager and download print studio, please request access to the developer portal at
  <a href="https://spark.autodesk.com/developers/" target="_blank">https://spark.autodesk.com/developers/</a>.</b>
  
- To submit contributions back to this project. Please fill in the Contributers Agreement 
+ To submit contributions back to this project. Please fill in the contributers agreement.
 
 If Building on Windows make sure to install Bonjour SDK from the Apple Store and make sure the variable  BONJOUR_SDK_HOME is set to the location.   
 
