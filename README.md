@@ -18,7 +18,7 @@ When unzipped please edit the localConfig.json file to use this.
 {
          "roopaServerPath" : "C:/SPARK/Release/runTime/RoopaServer.app/Contents/MacOS/RoopaServer"
 }
-   The above will work for Mac OS.
+   The above will work for Mac OS*.
 4. npm install   
 5. node Server.js (will start server on localhost:9998)  
 6. Go to: http://localhost:9998/printdb/printertypes to see normal execution
@@ -29,6 +29,13 @@ When unzipped please edit the localConfig.json file to use this.
  To submit contributions back to this project. Please fill in the contributers agreement.
 
 If Building on Windows make sure to install Bonjour SDK from the Apple Store and make sure the variable  BONJOUR_SDK_HOME is set to the location.   
+
+*Here is an example of localConfig.json for Windows. 
+
+{
+         "roopaServerPath" : "C:\\Users\\joe\\Release\\runTime\\bin\\RoopaServer.exe",
+}
+
 
 
 
