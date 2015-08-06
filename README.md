@@ -3,7 +3,7 @@ print-manager
 
 Provides desktop support for printer management and print preparation.
 
-This repository has further information at [Print Manager 1.1](https://spark.autodesk.com/developers/showcase/d0716b0d-5cb4-4959-9f10-032be8591c2a).
+This repository has further information at [Print Manager 1.1](https://spark.autodesk.com/developers/reference/introduction/printer-manufacturers-2/integrate-your-printer-model).
 
 For Print Manager to start you must download the geometry processor that is attached to the releases see [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)
 
