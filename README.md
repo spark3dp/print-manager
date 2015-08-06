@@ -17,10 +17,13 @@ When unzipped please edit the localConfig.json file to use this.
    NOTE: You must have platform C++ tools to be able to build some modules.
 2. cd spark-print-mgr 
 3. Add localConfig.json to the spark-print-mgr directory with the following content (it contains the location to the prep server)
+
 {
          "roopaServerPath" : "C:/SPARK/Release/runTime/RoopaServer.app/Contents/MacOS/RoopaServer"
 }
+
    The above will work for Mac OS*.
+
 4. npm install   
 5. node Server.js (will start server on localhost:9998)  
 6. Go to: http://localhost:9998/printdb/printertypes to see normal execution
