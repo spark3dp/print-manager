@@ -8,13 +8,13 @@
 Command = {
     CONNECT     : 'connect',
     DISCONNECT  : 'disconnect',
-    START       : 'start',  // This is in Ember.  Is it different from 'print'?
+    START       : 'start',
     PRINT       : 'print',
     CANCEL      : 'cancel',
     PAUSE       : 'pause',
     RESUME      : 'resume',
-    STATUS      : 'status', // We should have only 'status','getStatus' or 'state'
-    GET_STATUS  : 'getStatus', // not all three.  Deprecate 'getStatus' if we can
+    STATUS      : 'status',
+    GET_STATUS  : 'getStatus', 
     EXIT        : 'exit',
     RESET       : 'reset',
     COMMAND     : 'command'
