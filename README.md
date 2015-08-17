@@ -1,10 +1,15 @@
 print-manager
 ===========
 
-Provides desktop support for printer management and print preparation.
+Provides desktop support for printer management and print preparation. Primarily for use in Print Studio.
+
+The software here abstracts a command interface to supported printers, this allows a "printable" to be sent to a printer and it's state monitored.
+
 
 This repository has further information at [Print Manager 1.1](https://spark.autodesk.com/developers/showcase/d0716b0d-5cb4-4959-9f10-032be8591c2a) 
-and at [adding your printer] (https://spark.autodesk.com/developers/reference/introduction/printer-manufacturers-2/integrate-your-printer-model).
+and at [adding your printer] (https://spark.autodesk.com/developers/reference/introduction/printer-manufacturers-2/integrate-your-printer-model). 
+Please note that accessing this information requires a login.
+
 
 For Print Manager to start you must download the geometry processor that is attached to the releases see [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)
 
@@ -31,8 +36,10 @@ When unzipped please edit the localConfig.json file to use this.
 <b>To see full documentation of print-manager and download print studio, please request access to the developer portal at
  <a href="https://spark.autodesk.com/developers/" target="_blank">https://spark.autodesk.com/developers/</a>.</b>
  
- To submit contributions back to this project. Please fill in the contributers agreement.
-
+You can fork this project and if you want submit contributions back you must complete the contributers agreement.
+ 
+If see any issues please use the github issue mechanism. 
+ 
 If Building on Windows make sure to install Bonjour SDK from the Apple Store and make sure the variable  BONJOUR_SDK_HOME is set to the location.   
 
 *Here is an example of localConfig.json for Windows. 
