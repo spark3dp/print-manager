@@ -22,8 +22,8 @@ When unzipped please edit the localConfig.json file to use this.
 ## Quick Start  
 1. Install node version 0.10.35 (not the latest) found here:
    http://blog.nodejs.org/2014/12/23/node-v0-10-35-stable/
-   NOTE: You must have platform C++ tools to be able to build some modules.
-2. cd spark-print-mgr 
+   NOTE: C++ platform tools are required to build some of the modules.
+2. CD spark-print-mgr 
 3. Add localConfig.json to the spark-print-mgr directory with the following content (it contains the location to the prep server)
 
 {
@@ -36,11 +36,11 @@ When unzipped please edit the localConfig.json file to use this.
 5. node Server.js (will start server on localhost:9998)  
 6. Go to: http://localhost:9998/printdb/printertypes to see normal execution
 
-You can fork this project and if you want submit contributions back you must complete the contributers agreement.
+You can fork this project. If you want to submit contributions, please complete the contributers agreement.
  
-If see any issues please use the github issue mechanism. 
+If you see any issues please use the github issue mechanism. 
  
-If Building on Windows make sure to install Bonjour SDK from the Apple Store and make sure the variable  BONJOUR_SDK_HOME is set to the location.   
+If you are building on Windows, install Bonjour SDK from the Apple Store and make sure the variable  BONJOUR_SDK_HOME is set to the location.   
 
 *Here is an example of localConfig.json for Windows. 
 
