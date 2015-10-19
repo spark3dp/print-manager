@@ -500,6 +500,14 @@ function translatePrintable(req, res, next) {
         return next(err);
     }
 
+    var jobName = "Spark"
+    if (req.body.hasOwnProperty('job_name')) {
+        jobName = req.body.job_name;
+        if (!jobName) {
+            jobName = "Spark"
+        }
+    }
+
     var printerType = printerTypes.find(printerTypeID);
     if (!printerType) {
         err = new Errors.Request.BadRequestError('Printer type ' + printerTypeID + ' cannot be found', 100902);
@@ -559,7 +567,7 @@ function translatePrintable(req, res, next) {
             ' is not compatible with printer type ' + printerTypeID, 100907))
     }
 
-    var translator = TranslatorFactory.getTranslator(printerType, profile, material);
+    var translator = TranslatorFactory.getTranslator(printerType, profile, material, jobName);
 
     if (!translator) {
         return next(new Errors.Request.BadRequestError('No translator found', 100902));

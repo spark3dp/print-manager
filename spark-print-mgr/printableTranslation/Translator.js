@@ -8,13 +8,15 @@ var events = require('events'),
  * @param {Object} printerType - an Object representing the printer type
  * @param {Object} printerProfile - an Object representing the printer profile
  * @param {Object} material - an Object representing the material
+ * @param {String} jobName - name of the job
  * @constructor
  */
-function Translator(printerType, printerProfile, material) {
+function Translator(printerType, printerProfile, material, jobName) {
     events.EventEmitter.call(this);
     this.printerType = printerType;
     this.printerProfile = printerProfile;
     this.material = material;
+    this.jobName = jobName;
     this.progress = 0;
 }
 util.inherits(Translator, events.EventEmitter);
@@ -29,6 +31,10 @@ Translator.prototype.getPrinterProfile = function() {
 
 Translator.prototype.getMaterial = function() {
     return this.material;
+};
+
+Translator.prototype.getJobName = function() {
+    return this.jobName;
 };
 
 /**

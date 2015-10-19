@@ -23,6 +23,13 @@ PrintManagerServices.factory('Printers', ['$resource',
             status: {
                 method: 'GET',
                 url: '/print/printers/status/:printerId'
+            },
+            command: {
+                method: 'POST',
+                url: '/print/printers/:printerId/command',
+                params: {
+                    printerId: '@printerId'
+                }
             }
         });
     }]);

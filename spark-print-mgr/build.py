@@ -35,7 +35,7 @@ def flatten_manually( module ):
 	 
 def delete_extra_node_module_dirs():
      # Remove all the extra directories in node_modules that are not needed (test, example, src,...)
-     serialPortDepsDir = os.path.join("serialport", "build", "Release", ".deps" );
+     serialPortDepsDir = os.path.join("serialport", "build", "Release", ".deps");
      for dirname, dirnames, filenames in os.walk('.'):
          # Also manually, delete serialport/build/Release/.deps - it is a leftover from the build
          # and it causes problems with the installers on windows.
@@ -52,6 +52,9 @@ def delete_extra_node_module_dirs():
                  try_remove_dirs(fullPath)
              if (fullPath.find("src") != -1):
                  print("\t DELETING (src): " + fullPath);
+                 try_remove_dirs(fullPath)
+             if (fullPath.find("tools") != -1):
+                 print("\t DELETING (tools): " + fullPath);
                  try_remove_dirs(fullPath)
              if (fullPath.find(os.path.join("Release", "obj")) != -1):
                  path, subdir = os.path.split(fullPath);
