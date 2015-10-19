@@ -315,7 +315,7 @@ Connection.prototype.command = function (cmd, params){
     // If a model has been loaded, then we can fall through to the normal
     // command processing below.
     if (command === Command.PRINT) {
-        if (!this.fileLoaded) {
+        if (!this.fileLoaded && !this.fileLoading) {
             // Load the file or fail, but do not continue to command execution
             if (this.fileLoading) {
                 // this.fileLoading should always be false when this.fileLoaded is true
@@ -431,12 +431,9 @@ Connection.prototype.getStatus = function (params) {
     return Promise.when(this.rpc.invoke('getStatus', params2), 
         function (status){
             //todo: replace job name here.
-            if(status.job && that.job_id){
-                status.job = _.extend(status.job, {job_id : that.job_id});
-            } else {
-                status = _.omit(status, 'job');
-            }
-            
+
+            status.job = _.extend(status.job, {job_id : that.job_id});
+
             logger.debug("connection status", status);
             return status;
         }, 

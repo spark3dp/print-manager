@@ -1,87 +1,87 @@
-<div class="row header-box">
-    <button class="btn btn-icon btn-sm btn-back col-xs-1"
-            ng-click="goToPage('/printers');">
-    </button>
-    <div class="h4 text-center col-xs-8 col-xs-offset-1">Advanced Options</div>
-</div>
+<div class="console col-md-4 enter">
+    <div class="row header-box">
+        <button class="btn btn-icon btn-sm btn-back col-xs-offset-1 pull-left"
+                ng-click="goToPage('/printers');">
+        </button>
+        <div class="h4 text-center col-xs-8 col-xs-offset-1">Advanced Options</div>
+    </div>
 
-<div class="row">
+    <div class="row">
 
-    <form name="editSettingsForm" ng-submit="submit(editSettingsForm.$valid)" class="form-horizontal" novalidate>
-        <div class="main-box">
-            <div class="form-group"
-                 ng-class="{'has-error' : editSettingsForm.dataLocation.$invalid && !editSettingsForm.dataLocation.$pristine && !editSettingsForm.dataLocation.$untouched}">
-                <label for="dataLocation" class="control-label col-xs-5">Application data:</label>
-                <div class="col-xs-7">
-                    <input id="dataLocation" name="dataLocation" class="form-control" type="text" ng-model="config.data_files_location" ng-required="true">
-                    <p ng-show="editSettingsForm.dataLocation.$invalid && !editSettingsForm.dataLocation.$pristine && !editSettingsForm.dataLocation.$untouched"
-                       class="help-block">
-                        A location for the data files is required
-                    </p>
+        <form name="editSettingsForm" ng-submit="submit(editSettingsForm.$valid)" class="form-horizontal" novalidate>
+            <div class="main-box">
+                <div class="form-group"
+                     ng-class="{'has-error' : editSettingsForm.dataLocation.$invalid && !editSettingsForm.dataLocation.$pristine && !editSettingsForm.dataLocation.$untouched}">
+                    <label for="dataLocation" class="control-label col-xs-5">Application data:</label>
+                    <div class="col-xs-7">
+                        <input id="dataLocation" name="dataLocation" class="form-control" type="text" ng-model="config.data_files_location" ng-required="true">
+                        <p ng-show="editSettingsForm.dataLocation.$invalid && !editSettingsForm.dataLocation.$pristine && !editSettingsForm.dataLocation.$untouched"
+                           class="help-block">
+                            A location for the data files is required
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group"
-                 ng-class="{'has-error' : editSettingsForm.logLocation.$invalid && !editSettingsForm.logLocation.$pristine && !editSettingsForm.logLocation.$untouched}">
-                <label for="logLocation" class="control-label col-xs-5">Log file path:</label>
-                <div class="col-xs-7">
-                    <input id="logLocation" name="logLocation" class="form-control" type="text" ng-model="config.logger_options.log_file_location" ng-required="true">
-                    <p ng-show="editSettingsForm.logLocation.$invalid && !editSettingsForm.logLocation.$pristine && !editSettingsForm.logLocation.$untouched"
-                       class="help-block">
-                        A location for the log file is required
-                    </p>
+                <div class="form-group"
+                     ng-class="{'has-error' : editSettingsForm.logLocation.$invalid && !editSettingsForm.logLocation.$pristine && !editSettingsForm.logLocation.$untouched}">
+                    <label for="logLocation" class="control-label col-xs-5">Log file path:</label>
+                    <div class="col-xs-7">
+                        <input id="logLocation" name="logLocation" class="form-control" type="text" ng-model="config.logger_options.log_file_location" ng-required="true">
+                        <p ng-show="editSettingsForm.logLocation.$invalid && !editSettingsForm.logLocation.$pristine && !editSettingsForm.logLocation.$untouched"
+                           class="help-block">
+                            A location for the log file is required
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group"
-                 ng-class="{'has-error' : editSettingsForm.logName.$invalid && !editSettingsForm.logName.$pristine && !editSettingsForm.logName.$untouched}">
-                <label for="logName" class="control-label col-xs-5">Log file name:</label>
-                <div class="col-xs-7">
-                    <input id="logName" name="logName" class="form-control" type="text" ng-model="config.logger_options.log_file_name" ng-required="true">
-                    <p ng-show="editSettingsForm.logName.$invalid && !editSettingsForm.logName.$pristine && !editSettingsForm.logName.$untouched"
-                       class="help-block">
-                        A name for the log file is required
-                    </p>
+                <div class="form-group"
+                     ng-class="{'has-error' : editSettingsForm.logName.$invalid && !editSettingsForm.logName.$pristine && !editSettingsForm.logName.$untouched}">
+                    <label for="logName" class="control-label col-xs-5">Log file name:</label>
+                    <div class="col-xs-7">
+                        <input id="logName" name="logName" class="form-control" type="text" ng-model="config.logger_options.log_file_name" ng-required="true">
+                        <p ng-show="editSettingsForm.logName.$invalid && !editSettingsForm.logName.$pristine && !editSettingsForm.logName.$untouched"
+                           class="help-block">
+                            A name for the log file is required
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group"
-                 ng-class="{'has-error' : editSettingsForm.portNumber.$invalid && !editSettingsForm.portNumber.$pristine && !editSettingsForm.portNumber.$untouched}">
-                <label for="portNumber" class="control-label col-xs-5">Port:</label>
-                <div class="col-xs-7">
-                    <input id="portNumber" name="portNumber" class="form-control" type="text" ng-model="config.PORT" ng-required="true"
-                           ng-pattern="/^\d{1,5}$/">
-                    <p ng-show="editSettingsForm.portNumber.$invalid && !editSettingsForm.portNumber.$pristine && !editSettingsForm.portNumber.$untouched"
-                       class="help-block">
-                        An port number between 1 and 65535 is required
-                    </p>
+                <div class="form-group"
+                     ng-class="{'has-error' : editSettingsForm.portNumber.$invalid && !editSettingsForm.portNumber.$pristine && !editSettingsForm.portNumber.$untouched}">
+                    <label for="portNumber" class="control-label col-xs-5">Port:</label>
+                    <div class="col-xs-7">
+                        <input id="portNumber" name="portNumber" class="form-control" type="text" ng-model="config.PORT" ng-required="true"
+                               ng-pattern="/^\d{1,5}$/">
+                        <p ng-show="editSettingsForm.portNumber.$invalid && !editSettingsForm.portNumber.$pristine && !editSettingsForm.portNumber.$untouched"
+                           class="help-block">
+                            An port number between 1 and 65535 is required
+                        </p>
+                    </div>
                 </div>
+
+                <div class="form-group">
+                    <input id="allow-other-access" type="checkbox" ng-model="config.localhost_only"
+                           ng-true-value="false" ng-false-value="true">
+                    <label for="allow-other-access" class="col-xs-12"><span></span> Allow other computers to access Print Manager.</label>
+                </div>
+
+                <p>The changes will take effect when you restart the service.</p>
+
+                <p ng-show="errorMessage"
+                   class="text-danger">
+                    {{errorMessage}}
+                </p>
+
             </div>
 
-            <div class="form-group">
-                <input id="allow-other-access" type="checkbox" ng-model="config.localhost_only"
-                       ng-true-value="false" ng-false-value="true">
-                <label for="allow-other-access" class="col-xs-12"><span></span> Allow other computers to access Print Manager.</label>
-            </div>
-
-            <p>The changes will take effect when you restart the service.</p>
-
-            <p ng-show="errorMessage"
-               class="text-danger">
-                {{errorMessage}}
-            </p>
-
-        </div>
-
-        <div id="printer-details-footer" class="form-group footer-box">
-            <div class="col-xs-3 pull-right">
-                <button type="submit" class="btn btn-console-primary pull-right"
+            <div id="printer-details-footer" class="form-group footer-box">
+                <div class="col-xs-1 pull-right"></div>
+                <button type="submit" class="btn btn-console-primary col-xs-offset-3 pull-right"
                         ng-click="saveConfig(editSettingsForm.$valid);"
                         ng-disabled="editSettingsForm.$invalid">
                     Save
                 </button>
             </div>
-        </div>
-    </form>
-
+        </form>
+    </div>
 </div>

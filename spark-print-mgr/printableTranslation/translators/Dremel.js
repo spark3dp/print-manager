@@ -1,7 +1,7 @@
 var FDMTranslatorMarlin = require('../FDMTranslatorMarlin'),
 	util = require('util'),
     path = require('path'),
-    Promise = require('Promise'),
+    Promise = require('promise'),
     fs = require('fs');
 
 DremelTranslator = function(printerType, printerProfile, material, config) {

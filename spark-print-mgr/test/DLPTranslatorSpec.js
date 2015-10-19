@@ -23,7 +23,7 @@ describe('DLPTranslator', function () {
         should.exist(material);
 
         profiles.initialize();
-        printerProfile = profiles.find('9AEF2475-4A9B-4BAC-FE1B-F0A72703A1AA');
+        printerProfile = profiles.find('0EE76E3C-41FB-ACA7-362A-F1A2818BC3F2');
         should.exist(printerProfile);
 
         done();

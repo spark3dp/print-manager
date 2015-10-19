@@ -7,9 +7,14 @@
             "manufacturer": "Autodesk",
             "model_number": "1.0.0",
             "registration_url" : null,
-            "icon_id": "data/ember.png",
-            "icon50x50_id": "data/ember50x50.png",
-            "icon100x100_id": "data/ember100x100.png",
+			"icons": {
+				"16x16_id": "data/ember_16x16.png",
+				"32x32_id": "data/ember_32x32.png",
+				"50x50_id": "data/ember_50x50.png",
+				"100x100_id": "data/ember_100x100.png",
+				"200x60_id": "data/ember_200x60.png",
+				"400x120_id": "data/ember_400x120.png"
+			},
             "technology": "DLP",
             "default_material_id": "426F14FE-E6AF-496F-BBC7-7D6C0E16861D",
             "default_profile_id": "34F0E39A-9389-42BA-AB5A-4F2CD59C98E4",
@@ -76,9 +81,12 @@
             },
             "printer_capabilities": {},
             "_files": [
-                "icon_id",
-                "icon50x50_id",
-                "icon100x100_id",
+                "icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
+				"icons.200x60_id",
+				"icons.400x120_id",
                 "build_volume.bed_file_id",
                 "printable.packager_file_id"
             ]
@@ -90,9 +98,14 @@
             "manufacturer": "Dremel 3D",
             "registration_url" : null,
             "model_number": "1.0.0",
-            "icon_id": "data/dremel.png",
-            "icon50x50_id": "data/dremel50x50.png",
-            "icon100x100_id": "data/dremel100x100.png",
+			"icons": {
+				"16x16_id": "data/dremel_16x16.png",
+				"32x32_id": "data/dremel_32x32.png",
+				"50x50_id": "data/dremel_50x50.png",
+				"100x100_id": "data/dremel_100x100.png",
+				"200x60_id": "data/dremel_200x60.png",
+				"400x120_id": "data/dremel_400x120.png"
+			},
             "technology": "FDM",
             "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
             "default_profile_id": "CF313AC0-FDE6-467A-9E8B-797F0F35E6A3",
@@ -155,9 +168,12 @@
                 "z_axis_feed_rate": 3
             },
             "_files": [
-                "icon_id",
-                "icon50x50_id",
-                "icon100x100_id",
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
+				"icons.200x60_id",
+				"icons.400x120_id",
                 "build_volume.bed_file_id",
                 "printable.packager_data.icon_file_id"
             ]
@@ -168,9 +184,12 @@
             "name": "Replicator 2",
             "manufacturer": "Makerbot",
             "model_number": "1.0.0",
-            "icon_id": "data/Replicator2.png",
-            "icon50x50_id": "data/replicator250x50.png",
-            "icon100x100_id": "data/replicator2100x100.png",
+			"icons": {
+				"16x16_id": "data/replicator2_16x16.png",
+				"32x32_id": "data/replicator2_32x32.png",
+				"50x50_id": "data/replicator2_50x50.png",
+				"100x100_id": "data/replicator2_100x100.png"
+			},
             "technology": "FDM",
             "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
             "default_profile_id": "BEDD1886-DE64-4E72-9167-76F9E3DE2417",
@@ -226,9 +245,10 @@
                 "z_axis_feed_rate": 3
             },
             "_files": [
-                "icon_id",
-                "icon50x50_id",
-                "icon100x100_id",
+                "icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
                 "build_volume.bed_file_id"
             ]
         },
@@ -239,9 +259,12 @@
             "manufacturer": "Ultimaker",
             "registration_url" : null,
             "model_number": "2.0.0",
-            "icon_id": "data/ultimaker2.png",
-            "icon50x50_id": "data/ultimaker250x50.png",
-            "icon100x100_id": "data/ultimaker2100x100.png",
+			"icons": {
+				"16x16_id": "data/ultimaker2_16x16.png",
+				"32x32_id": "data/ultimaker2_32x32.png",
+				"50x50_id": "data/ultimaker2_50x50.png",
+				"100x100_id": "data/ultimaker2_100x100.png"
+			},
             "technology": "FDM",
             "default_material_id": "B27DE79C-0459-4B59-87FD-3093313126EF",
             "default_profile_id": "F3314255-711D-48A9-8CB2-C55CEACF58B7",
@@ -309,9 +332,10 @@
                 "z_axis_feed_rate": 3
             },
             "_files": [
-                "icon_id",
-                "icon50x50_id",
-                "icon100x100_id",
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
                 "build_volume.bed_file_id"
             ]
         },
@@ -322,9 +346,12 @@
             "manufacturer": "Type A",
             "registration_url" : null,
             "model_number": "2014",
-            "icon_id": "data/TypeA.png",
-            "icon50x50_id": "data/typeA50x50.png",
-            "icon100x100_id": "data/typeA100x100.png",
+			"icons": {
+				"16x16_id": "data/typeA_16x16.png",
+				"32x32_id": "data/typeA_32x32.png",
+				"50x50_id": "data/typeA_50x50.png",
+				"100x100_id": "data/typeA_100x100.png"
+			},
             "technology": "FDM",
             "default_material_id": "FB67831E-BB63-4C76-BC00-8D84F8F44CB9",
             "default_profile_id": "75641294-BD6B-44F9-8C34-1DDEB9394296",
@@ -392,9 +419,247 @@
                 "z_axis_feed_rate": 3.0
             },
             "_files": [
-                "icon_id",
-                "icon50x50_id",
-                "icon100x100_id",
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        },
+        {
+            "id": "8D586473-C1A9-451B-A129-2425357C6428",
+            "version": 1,
+            "name": "Play",
+            "manufacturer": "Printrbot",
+            "registration_url" : null,
+            "model_number": "1.0.0",
+			"icons": {
+				"16x16_id": "data/printrbotplay_16x16.png",
+				"32x32_id": "data/printrbotplay_32x32.png",
+				"50x50_id": "data/printrbotplay_50x50.png",
+				"100x100_id": "data/printrbotplay_100x100.png"
+			},
+            "technology": "FDM",
+            "default_material_id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
+            "default_profile_id": "9982876C-5FF0-492A-8F76-4E4BAF17CA1F",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "bed_size": [10.0, 10.0, 13.0],
+                "bed_offset": [0.0, 0.0, 0.0],
+                "home_position": [0, 10, 0],
+                "park_position": [1, 9, 0],
+                "bed_file_id": "data/printrbotplay.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "serial",
+                    "discovery": "serial",
+                    "protocol": "usb.serial",
+                    "baud" : 250000
+                }
+            ],
+            "preferred_connection": "serial",
+            "max_speeds": {
+                "x": 8,
+                "y": 8,
+                "z": 0.01
+            },
+            "software_info": {
+                "name": "Printrbot",
+                "url": "http://printrbot.com"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 240,
+                "nozzle_max_volume_per_sec": 150,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_retract_speed": 3,
+                "nozzle_lift_z": 0,
+                "nozzle_extra_length_on_restart": 0,
+                "e_speed_max": 2.0,
+                "nozzle_min_travel_on_retraction": 0.3,
+                "bed_temp_max": 0,
+                "xy_speed_max": 8,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 8,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        },
+        {
+            "id": "152A72A1-45C7-11E5-B970-0800200C9A66",
+            "version": 1,
+            "name": "Simple",
+            "manufacturer": "Printrbot",
+            "registration_url" : null,
+            "model_number": "1.0.0",
+			"icons": {
+				"16x16_id": "data/printrbotsimple_16x16.png",
+				"32x32_id": "data/printrbotsimple_32x32.png",
+				"50x50_id": "data/printrbotsimple_50x50.png",
+				"100x100_id": "data/printrbotsimple_100x100.png"
+			},
+            "technology": "FDM",
+            "default_material_id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
+            "default_profile_id": "152A72A7-45C7-11E5-B970-0800200C9A66",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "bed_size": [15.0, 15.0, 15.0],
+                "bed_offset": [0.0, 0.0, 0.0],
+                "home_position": [0, 15, 0],
+                "park_position": [1, 14, 0],
+                "bed_file_id": "data/printrbotsimple.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "serial",
+                    "discovery": "serial",
+                    "protocol": "usb.serial",
+                    "baud" : 250000
+                }
+            ],
+            "preferred_connection": "serial",
+            "max_speeds": {
+                "x": 8,
+                "y": 8,
+                "z": 0.01
+            },
+            "software_info": {
+                "name": "Printrbot",
+                "url": "http://printrbot.com"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 240,
+                "nozzle_max_volume_per_sec": 150,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_retract_speed": 3,
+                "nozzle_lift_z": 0,
+                "nozzle_extra_length_on_restart": 0,
+                "e_speed_max": 2.0,
+                "nozzle_min_travel_on_retraction": 0.3,
+                "bed_temp_max": 80,
+                "xy_speed_max": 8,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 8,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        },
+        {
+            "id": "8301C8D0-7A59-4F4B-A918-D5D38888790F",
+            "version": 1,
+            "name": "Plus",
+            "manufacturer": "Printrbot",
+            "registration_url" : null,
+            "model_number": "1.0.0",
+			"icons": {
+				"16x16_id": "data/printrbotplus_16x16.png",
+				"32x32_id": "data/printrbotplus_32x32.png",
+				"50x50_id": "data/printrbotplus_50x50.png",
+				"100x100_id": "data/printrbotplus_100x100.png"
+			},
+            "technology": "FDM",
+            "default_material_id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
+            "default_profile_id": "0D9634E7-396F-4942-A962-EA0D1C1690FF",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cartesian",
+                "bed_size": [25.0, 25.0, 26.5],
+                "bed_offset": [0.0, 0.0, 0.0],
+                "home_position": [0, 25, 0],
+                "park_position": [1, 24, 0],
+                "bed_file_id": "data/printrbotplus.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "serial",
+                    "discovery": "serial",
+                    "protocol": "usb.serial",
+                    "baud" : 250000
+                }
+            ],
+            "preferred_connection": "serial",
+            "max_speeds": {
+                "x": 8,
+                "y": 8,
+                "z": 0.01
+            },
+            "software_info": {
+                "name": "Printrbot",
+                "url": "http://printrbot.com"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 240,
+                "nozzle_max_volume_per_sec": 150,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_retract_speed": 3,
+                "nozzle_lift_z": 0,
+                "nozzle_extra_length_on_restart": 0,
+                "e_speed_max": 2.0,
+                "nozzle_min_travel_on_retraction": 0.3,
+                "bed_temp_max": 80,
+                "xy_speed_max": 8,
+                "z_speed_max": 0.01,
+                "travel_feed_rate": 8,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+				"icons.16x16_id",
+				"icons.32x32_id",
+				"icons.50x50_id",
+				"icons.100x100_id",
                 "build_volume.bed_file_id"
             ]
         }

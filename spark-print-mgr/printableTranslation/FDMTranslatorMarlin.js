@@ -1,6 +1,8 @@
-var FDMTranslator = require('./FDMTranslator'),
+var _ = require('underscore'),
     util = require('util'),
     fs = require('fs'),
+
+    FDMTranslator = require('./FDMTranslator'),
     logger = require('../logging/PrintManagerLogger');
 
 var FDMTranslatorMarlin = function(printerType, printerProfile, material, config) {
@@ -466,6 +468,9 @@ FDMTranslatorMarlin.prototype.activeAxes = function(command) {
  * Process each movement, but on the first movement,
  * append any necessary initial parameters
  *
+ * If the first command's movement is negligable then make sure to 
+ * append significant initial parameters to the next significant command
+ *
  * @param {Object} command
  * @returns {string} line
  */
@@ -476,17 +481,50 @@ FDMTranslatorMarlin.prototype.processAxesArray = function(command) {
     var commandArrayAxes = axes[0];
     var commandInitialAxes = axes[1];
     var n_commands = axes[2];
+
+    var storeF = undefined; 
+    // Hold on to significant feedrate changes in case initial movement is negligible 
+    
     for(var i = 0; i < n_commands; i++) {
-        line += "G1";
-        commandArrayAxes.forEach(function(axis){
-            line += self.redundancyCheck(command, axis, i);
-        });
-        if (i === 0) {
-            commandInitialAxes.forEach(function(axis){
-                line += self.redundancyCheck(command, axis, i);
-            });
+
+        var canceledEMove = false;
+        var commandLine = "G1";
+
+        if (typeof(command.x[i]) === 'number') {
+            commandLine += self.redundancyCheck(command, {'x': this.AXES[0].x}, i);
         }
-        line = this.postProcessLine(command, line);
+        if (typeof(command.y[i]) === 'number') {
+            commandLine += self.redundancyCheck(command, {'y': this.AXES[1].y}, i);
+        }
+        if (typeof(command.z[i]) === 'number') {
+            commandLine += self.redundancyCheck(command, {'z': this.AXES[2].z}, i);
+        }
+        if (typeof(command.e[i]) === 'number') {
+            if (commandLine !== "G1" || command.type === 3) {
+                commandLine += self.redundancyCheck(command, {'e': this.AXES[3].e}, i);
+            } else {
+                // If there is no movement or if movement is negligible
+                canceledEMove = true;
+            }
+        }
+        if (typeof(command.f[i]) === 'number') {
+            var fValue = self.redundancyCheck(command, {'f': this.AXES[4].f}, i)
+            if (!canceledEMove) {
+                commandLine += fValue;
+            } else {
+                // Save the F value for the next significant movement
+                storeF = fValue;
+            }
+        } else if (storeF !== undefined) {
+            commandLine += storeF;
+            storeF = undefined;
+        }
+
+        // Get rid of negligible lines
+        if (commandLine === "G1") {
+            commandLine = "";
+        }
+        line += this.postProcessLine(command, commandLine);
     }
     return line;
 };
@@ -504,26 +542,28 @@ FDMTranslatorMarlin.prototype.processAxesArray = function(command) {
 FDMTranslatorMarlin.prototype.redundancyCheck = function(command, axis, i) {
     var line = "";
     var key = Object.keys(axis)[0];
-    var newPos = command[key][i];
-    var difference;
-    if (this.currentPos[key] !== undefined) {
-        difference = Math.abs(this.currentPos[key] - command[key][i]);
-    }
-    if(
+    var newPos = this.numToString(command[key][i], this.precision[key]);
+    if (
         // Current position has not yet been set
         this.currentPos[key] === undefined ||
 
-        // The difference between the two movements is negligible
-        difference > 0.00001 ||
-
-        // The difference between the two movements is enough to change a significant digit
-        this.numToString(command[key][i], this.precision[key]) !==
-        this.numToString(this.currentPos[key], this.precision[key])
+        // The coordinates are new
+        newPos !== this.currentPos[key]
     ) {
-        line += " " + axis[key] + this.numToString(command[key][i], this.precision[key]);
+        line += " " + axis[key] + newPos;
         this.currentPos[key] = newPos;
     }
     return line;
 };
+
+function containsKey(axisArray, key) {
+    var result = false;
+    axisArray.forEach (function (axis) {
+        if (Object.keys(axis)[0] === key) {
+            result = true;
+        }
+    });
+    return result;
+}
 
 module.exports = FDMTranslatorMarlin;

@@ -22,6 +22,7 @@
     "heartbeater": "0.1.0",
     "http": "0.0.0",
     "jsonrpc-serializer": "0.1.6",
+    "line-by-line": "^0.1.4",
     "mdns": "2.2.4",
     "mdns-js": "0.2.9",
     "mime": "1.2.11",

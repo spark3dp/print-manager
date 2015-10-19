@@ -41,6 +41,10 @@ describe('Dremel Translator', function () {
 
         var translator = new DremelTranslator(printerType, undefined, undefined, config);
 
+        var jobName = "Spark";
+        translator.getJobName().should.eql(jobName);
+
+
         translator.translate(inputFile, outputFile)
         .then(function () {
             TestHelper.fileExists(outputFile).should.equal(true);

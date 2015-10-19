@@ -1,25 +1,35 @@
-<div class="row header-box">
-    <button class="btn btn-icon btn-sm btn-settings col-xs-1"
-            ng-click="goToPage('/settings');">
-    </button>
-    <div class="h3 text-center col-xs-6 col-xs-offset-2">Status</div>
-    <button class="btn btn-console-primary btn-icon btn-edit wide pull-right"
-            ng-click="goToPage('/printers/edit');">
-    </button>
-</div>
+<div class="console col-md-4 center">
+    <div class="row header-box">
+        <button class="btn btn-icon btn-sm btn-settings col-xs-offset-1 pull-left"
+                ng-click="goToPage('/settings');">
+        </button>
+        <div class="h3 text-center col-xs-6 col-xs-offset-1">Status</div>
+        <div class="col-xs-2 pull-right"></div>
+        <button class="btn btn-console-primary btn-icon btn-edit wide pull-right"
+                ng-click="goToPage('/printers/edit');">
+        </button>
+    </div>
 
-<div class="row main-box">
-    <table class="table table-hover list-printers-table">
-        <tr ng-repeat="printer in printers">
-            <td>
-                <div class="pull-left icon" ng-class="getDefaultsForType(printer.type_id).cssClass"></div>
-                <div class="pull-left">{{printer.name}}</div>
-                <div class="pull-right">{{printer.status.state || '...'}}</div>
-            </td>
-        </tr>
-    </table>
-</div>
+    <div class="row main-box">
+        <table class="table table-hover list-printers-table">
+            <tr ng-repeat="printer in printers">
+                <td>
+                    <div class="pull-left icon" ng-class="getDefaultsForType(printer.type_id).cssClass"></div>
+                    <div class="col-md-4 pull-left">
+                        <div class="printer-name">{{printer.name}}</div>
+                    </div>
+                    <div class="printer-status pull-right">
+                        <a class="btn btn-default btn-block pull-right" ng-click="goToPage('/printers/status/' + printer.id);">
+                            {{printer.status.state || '...'}}
+                            <i class="icon-chevron-right"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-<div class="row footer-box">
-    <button class="btn btn-icon btn-refresh pull-left" ng-click="retrievePrinters();"></button>
+    <div class="row footer-box">
+        <button class="btn btn-icon btn-refresh col-xs-offset-1 pull-left" ng-click="retrievePrinters();"></button>
+    </div>
 </div>

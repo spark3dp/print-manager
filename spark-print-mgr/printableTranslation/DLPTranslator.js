@@ -15,10 +15,11 @@ var DLPReader = require('./DLPReader'),
  * @param {Object} printerType - an Object representing the printer type
  * @param {Object} printerProfile - an Object representing the printer profile
  * @param {Object} material - an Object representing the material
+ * @param {String} jobName - name of the job
  * @constructor
  */
-function DLPTranslator(printerType, printerProfile, material) {
-    Translator.call(this, printerType, printerProfile, material);
+function DLPTranslator(printerType, printerProfile, material, jobName) {
+    Translator.call(this, printerType, printerProfile, material, jobName);
 }
 util.inherits(DLPTranslator, Translator);
 

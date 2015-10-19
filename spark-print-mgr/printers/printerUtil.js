@@ -17,10 +17,16 @@ function getDriverInfo(deviceData) {
         return { driverPath : './drivers/virtualPrinter' };
 
         // USB and Serial get their device data from deviceConfig.json
+        // If the device has an arbitrary PID, set it to -1 in driverConfig
     case 'usb':
     case 'serial':
-        var driver = _.find(driverConfig.devices, function(device) {
-                return ((deviceData.VID === device.VID) && (deviceData.PID === device.PID));
+        var driver = _.find(
+            driverConfig.devices,
+            function(device) {
+                return (
+                    deviceData.VID === device.VID &&
+                    (deviceData.PID === device.PID || deviceData.PID === -1)
+                );
             });
         if (driver && driver.driverPath) {
             return { driverPath : driver.driverPath };

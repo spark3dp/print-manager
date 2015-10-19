@@ -16,12 +16,12 @@ TranslatorFactory.prototype.registerTranslator = function (translatorClass) {
     return false;
 };
 
-TranslatorFactory.prototype.getTranslator = function (printerType, printerProfile, material) {
+TranslatorFactory.prototype.getTranslator = function (printerType, printerProfile, material, jobName) {
     for (var i = 0; i < this.translators.length; ++i) {
         var translatorClass = this.translators[i];
         try {
             if (translatorClass.canTranslate(printerType, printerProfile, material)) {
-                return new translatorClass(printerType, printerProfile, material);
+                return new translatorClass(printerType, printerProfile, material, jobName);
             }
         } catch (e) {
         }

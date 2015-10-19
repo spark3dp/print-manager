@@ -19,13 +19,13 @@ describe('Ember Translator', function () {
         should.exist(material);
 
         profiles.initialize();
-        printerProfile = profiles.find('9AEF2475-4A9B-4BAC-FE1B-F0A72703A1AA');
+        printerProfile = profiles.find('0EE76E3C-41FB-ACA7-362A-F1A2818BC3F2');
         should.exist(printerProfile);
 
         // TODO:  These parameters are required by the translator.  The profiles need to
         //        be updated to include these and any missing ones in profiles.json.
         //
-        printerProfile['burn_in_layer_angle_of_rotation'] = 10;
+        printerProfile['burn-in_layer_angle_of_rotation'] = 10;
         printerProfile['first_layer_angle_of_rotation'] = 10;
         printerProfile['model_layer_angle_of_rotation'] = 10;
 
@@ -33,10 +33,12 @@ describe('Ember Translator', function () {
     });
 
     it('should translate a valid DLP file', function (done) {
-        var translator = new EmberTranslator(printerType, printerProfile, material);
+        var jobName = "Test-Spark";
+        var translator = new EmberTranslator(printerType, printerProfile, material, jobName);
         translator.getPrinterType().should.eql(printerType);
         translator.getPrinterProfile().should.eql(printerProfile);
         translator.getMaterial().should.eql(material);
+        translator.getJobName().should.eql(jobName);
 
         translator.on('progress', function (progress) {
             translator.progress.should.equal(progress);

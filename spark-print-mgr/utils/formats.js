@@ -8,7 +8,6 @@ module.exports = {
         technology: String,
         default_material_id: String,
         default_profile_id: String,
-        icon_id: String,
         supported_connections: Array,
 
         build_volume: {

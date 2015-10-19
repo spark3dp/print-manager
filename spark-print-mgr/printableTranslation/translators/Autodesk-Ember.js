@@ -95,7 +95,7 @@ var conversions = {
 };
 
 
-function getParam( profile, emberName, name, convCode )
+function getParam( profile, emberName, name, convCode, customConv )
 {
     if( ! (name in profile) )
         throw "Parameter not found in profile " + profile.id + ": " + name;
@@ -115,6 +115,10 @@ function getParam( profile, emberName, name, convCode )
                 value = conversions[convCode] * value;
             }
         }
+		else if( customConv )
+		{
+			value = customConv * value;
+		}
         
         value = handleDecimals( emberName, value )
     }
@@ -125,37 +129,59 @@ function getParam( profile, emberName, name, convCode )
 
 var mapping = [
     [ "LayerThicknessMicrons", "layer_height", "l" ],
-    [ "BurnInExposureSec", "burn_in_exposure" ],
-    [ "BurnInLayers", "burn_in_layers" ],
-    [ "BurnInSeparationRPM", "burn_in_layer_separation_slide_velocity" ],
-    [ "BurnInApproachRPM", "burn_in_layer_approach_slide_velocity" ],
-    [ "BurnInZLiftMicrons", "burn_in_layer_z_axis_overlift", "l" ],
-    [ "BurnInSeparationMicronsPerSec", "burn_in_layer_separation_z_axis_velocity", "l" ],
-    [ "BurnInApproachMicronsPerSec", "burn_in_layer_approach_z_axis_velocity", "l" ],
-    [ "BurnInRotationMilliDegrees", "burn_in_layer_angle_of_rotation", "a" ],
-    [ "BurnInExposureWaitMS", "burn_in_layer_wait_after_exposure", "t" ],
-    [ "BurnInSeparationWaitMS", "burn_in_layer_wait_after_separation", "t" ],
-    [ "BurnInApproachWaitMS", "burn_in_layer_wait_after_approach", "t" ],
+
+    [ "FirstApproachWaitMS", "first_layer_wait_before_exposure", "t" ],    
     [ "FirstExposureSec", "first_layer_exposure_time" ],
     [ "FirstSeparationRPM", "first_layer_separation_slide_velocity" ],
-    [ "FirstApproachRPM", "first_layer_approach_slide_velocity" ],
-    [ "FirstZLiftMicrons", "first_layer_z_axis_overlift", "l" ],
-    [ "FirstSeparationMicronsPerSec", "first_layer_separation_z_axis_velocity", "l" ],
-    [ "FirstApproachMicronsPerSec", "first_layer_approach_z_axis_velocity", "l" ],
+    [ "FirstZLiftMicrons", "first_layer_z-axis_overlift", "l" ],
+    [ "FirstSeparationMicronsPerSec", "first_layer_separation_z-axis_velocity", "l" ],
+	[ "FirstApproachRPM", "first_layer_approach_slide_velocity" ],
+    [ "FirstApproachMicronsPerSec", "first_layer_approach_z-axis_velocity", "l" ],
     [ "FirstRotationMilliDegrees", "first_layer_angle_of_rotation", "a" ],
-    [ "FirstExposureWaitMS", "first_layer_wait_after_exposure", "t" ],
-    [ "FirstSeparationWaitMS", "first_layer_wait_after_separation", "t" ],
-    [ "FirstApproachWaitMS", "first_layer_wait_after_approach", "t" ],
-    [ "ModelExposureSec", "model_exposure_time" ],
+    [ "FirstPressMicrons", "first_layer_overpress", "l" ],
+    [ "FirstPressMicronsPerSec", "first_layer_overpress_velocity", "l" ],
+    [ "FirstPressWaitMS", "first_layer_wait_after_overpress", "t" ],
+    [ "FirstUnPressMicronsPerSec", "first_layer_overpress_return_velocity", "l" ],
+	[ "FirstSeparationRotJerk", "first_layer_separation_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "FirstSeparationZJerk", "first_layer_separation_z-axis_maximum_jerk", null, 60*60*60*10 ],
+    [ "FirstApproachRotJerk", "first_layer_approach_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "FirstApproachZJerk", "first_layer_approach_z-axis_maximum_jerk", null, 60*60*60*10 ],
+
+    [ "BurnInLayers", "burn-in_layer_burn_in_layers" ],
+	[ "BurnInApproachWaitMS", "burn-in_layer_wait_before_exposure", "t" ],    
+    [ "BurnInExposureSec", "burn-in_layer_exposure_time" ],
+    [ "BurnInSeparationRPM", "burn-in_layer_separation_slide_velocity" ],
+    [ "BurnInZLiftMicrons", "burn-in_layer_z-axis_overlift", "l" ],
+    [ "BurnInSeparationMicronsPerSec", "burn-in_layer_separation_z-axis_velocity", "l" ],
+	[ "BurnInApproachRPM", "burn-in_layer_approach_slide_velocity" ],
+    [ "BurnInApproachMicronsPerSec", "burn-in_layer_approach_z-axis_velocity", "l" ],
+    [ "BurnInRotationMilliDegrees", "burn-in_layer_angle_of_rotation", "a" ],
+    [ "BurnInPressMicrons", "burn-in_layer_overpress", "l" ],
+    [ "BurnInPressMicronsPerSec", "burn-in_layer_overpress_velocity", "l" ],
+    [ "BurnInPressWaitMS", "burn-in_layer_wait_after_overpress", "t" ],
+    [ "BurnInUnPressMicronsPerSec", "burn-in_layer_overpress_return_velocity", "l" ],	
+	[ "BurnInSeparationRotJerk", "burn-in_layer_separation_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "BurnInSeparationZJerk", "burn-in_layer_separation_z-axis_maximum_jerk", null, 60*60*60*10 ],
+    [ "BurnInApproachRotJerk", "burn-in_layer_approach_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "BurnInApproachZJerk", "burn-in_layer_approach_z-axis_maximum_jerk", null, 60*60*60*10 ],
+
+	[ "ModelApproachWaitMS", "model_layer_wait_before_exposure", "t" ],    
+    [ "ModelExposureSec", "model_layer_exposure_time" ],
     [ "ModelSeparationRPM", "model_layer_separation_slide_velocity" ],
-    [ "ModelApproachRPM", "model_layer_approach_slide_velocity", ],
-    [ "ModelZLiftMicrons", "model_layer_z_axis_overlift", "l" ],
-    [ "ModelSeparationMicronsPerSec", "model_layer_separation_z_axis_velocity", "l" ],
-    [ "ModelApproachMicronsPerSec", "model_layer_approach_z_axis_velocity", "l" ],
+    [ "ModelZLiftMicrons", "model_layer_z-axis_overlift", "l" ],
+    [ "ModelSeparationMicronsPerSec", "model_layer_separation_z-axis_velocity", "l" ],
+	[ "ModelApproachRPM", "model_layer_approach_slide_velocity" ],
+    [ "ModelApproachMicronsPerSec", "model_layer_approach_z-axis_velocity", "l" ],
     [ "ModelRotationMilliDegrees", "model_layer_angle_of_rotation", "a" ],
-    [ "ModelExposureWaitMS", "model_layer_wait_after_exposure", "t" ],
-    [ "ModelSeparationWaitMS", "model_layer_wait_after_separation", "t" ],
-    [ "ModelApproachWaitMS", "model_layer_wait_after_approach", "t" ]
+    [ "ModelPressMicrons", "model_layer_overpress", "l" ],
+    [ "ModelPressMicronsPerSec", "model_layer_overpress_velocity", "l" ],
+    [ "ModelPressWaitMS", "model_layer_wait_after_overpress", "t" ],
+    [ "ModelUnPressMicronsPerSec", "model_layer_overpress_return_velocity", "l" ],	
+	[ "ModelSeparationRotJerk", "model_layer_separation_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "ModelSeparationZJerk", "model_layer_separation_z-axis_maximum_jerk", null, 60*60*60*10 ],
+    [ "ModelApproachRotJerk", "model_layer_approach_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
+    [ "ModelApproachZJerk", "model_layer_approach_z-axis_maximum_jerk", null, 60*60*60*10 ]
+
 ];
 
 
@@ -191,12 +217,12 @@ var mapping = [
 // end
 
 
-function EmberTranslator(printerType, printerProfile, material) {
+function EmberTranslator(printerType, printerProfile, material, jobName) {
     DLPTranslator.call(this, printerType, printerProfile, material);
     this.profile = printerProfile;
     this.sliceCount = 0;
     this.slice = 0;
-    this.jobName = "Spark";
+    this.jobName = jobName;
 }
 
 util.inherits(EmberTranslator, DLPTranslator);
@@ -263,7 +289,7 @@ EmberTranslator.prototype.writeSettings = function()
     for( var key in mapping )
     {
         var item = mapping[key];
-        settings[item[0]] = getParam( this.profile, item[0], item[1], item[2] );
+        settings[item[0]] = getParam( this.profile, item[0], item[1], item[2], item[3] );
     }
     
     // The "printsettings" file isn't a real JSON file.  Some of the

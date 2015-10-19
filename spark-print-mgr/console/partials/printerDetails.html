@@ -1,61 +1,62 @@
-<div class="row header-box">
-    <button class="btn btn-icon btn-back col-xs-1"
-            ng-click="goToPage('/printers/edit');">
-    </button>
-    <div class="h3 text-center col-xs-8 col-xs-offset-1">Edit Printer</div>
-</div>
+<div class="console col-md-4 center">
+    <div class="row header-box">
+        <button class="btn btn-icon btn-back col-xs-offset-1 pull-left"
+                ng-click="goToPage('/printers/edit');">
+        </button>
+        <div class="h3 text-center col-xs-8 col-xs-offset-1">Edit Printer</div>
+    </div>
 
-<div class="row">
+    <div class="row">
 
-    <form name="addPrinterForm" ng-submit="submit(addPrinterForm.$valid)" class="form-horizontal" novalidate>
-        <div class="main-box">
+        <form name="addPrinterForm" ng-submit="submit(addPrinterForm.$valid)" class="form-horizontal" novalidate>
+            <div class="main-box">
 
-            <div class="form-group">
-                <label for="printer-type" class="control-label col-xs-4">Printer Type:</label>
-                <div class="col-xs-8">
-                    <input id="printer-type" class="form-control" type="text" ng-model="printer.printerType.name" disabled="disabled">
+                <div class="form-group">
+                    <label for="printer-type" class="control-label col-xs-4">Printer Type:</label>
+                    <div class="col-xs-8">
+                        <input id="printer-type" class="form-control" type="text" ng-model="printer.printerType.name" disabled="disabled">
+                    </div>
                 </div>
+                <div class="form-group" ng-class="{'has-error' : addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched}">
+                    <label for="printer-name" class="control-label col-xs-3">Nickname:</label>
+                    <div class="col-xs-8 col-xs-offset-1">
+                        <input id="printer-name" name="printerName" class="form-control" type="text" ng-model="printer.name" required>
+                        <p ng-show="addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched"
+                           class="help-block">
+                            A name is required
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Show editable field if printer is Ember or Type A -->
+                <div class="form-group"
+                     ng-class="{'has-error' : addPrinterForm.ipAddress.$invalid && !addPrinterForm.ipAddress.$pristine && !addPrinterForm.ipAddress.$untouched}"
+                     ng-show="isIPEnabledPrinter">
+                    <label for="ipAddress" class="control-label col-xs-4">IP Address:</label>
+                    <div class="col-xs-8">
+                        <input id="ipAddress" name="ipAddress" class="form-control" type="text" ng-model="printer.address" disabled="disabled">
+                    </div>
+                </div>
+
+                <div class="form-group" ng-show="!isIPEnabledPrinter">
+                    <div class="col-xs-8 col-xs-offset-4">
+                        <p>Connected via USB.</p>
+                    </div>
+                </div>
+
             </div>
-            <div class="form-group" ng-class="{'has-error' : addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched}">
-                <label for="printer-name" class="control-label col-xs-3">Nickname:</label>
-                <div class="col-xs-8 col-xs-offset-1">
-                    <input id="printer-name" name="printerName" class="form-control" type="text" ng-model="printer.name" required>
-                    <p ng-show="addPrinterForm.printerName.$invalid && !addPrinterForm.printerName.$pristine && !addPrinterForm.printerName.$untouched"
-                       class="help-block">
-                        A name is required
+
+            <div id="printer-details-footer" class="form-group footer-box">
+                <div class="col-xs-9">
+                    <p ng-show="errorMessage"
+                       class="text-danger">
+                        {{errorMessage}}
                     </p>
                 </div>
-            </div>
-
-            <!-- Show editable field if printer is Ember or Type A -->
-            <div class="form-group"
-                 ng-class="{'has-error' : addPrinterForm.ipAddress.$invalid && !addPrinterForm.ipAddress.$pristine && !addPrinterForm.ipAddress.$untouched}"
-                 ng-show="isIPEnabledPrinter">
-                <label for="ipAddress" class="control-label col-xs-4">IP Address:</label>
-                <div class="col-xs-8">
-                    <input id="ipAddress" name="ipAddress" class="form-control" type="text" ng-model="printer.address" disabled="disabled">
+                <div class="col-xs-3 pull-right">
+                    <button type="submit" class="btn btn-console-primary pull-right" ng-disabled="addPrinterForm.$invalid">Submit</button>
                 </div>
             </div>
-
-            <div class="form-group" ng-show="!isIPEnabledPrinter">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <p>Connected via USB.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div id="printer-details-footer" class="form-group footer-box">
-            <div class="col-xs-9">
-                <p ng-show="errorMessage"
-                   class="text-danger">
-                    {{errorMessage}}
-                </p>
-            </div>
-            <div class="col-xs-3 pull-right">
-                <button type="submit" class="btn btn-console-primary pull-right" ng-disabled="addPrinterForm.$invalid">Submit</button>
-            </div>
-        </div>
-    </form>
-
+        </form>
+    </div>
 </div>
