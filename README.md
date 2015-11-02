@@ -42,7 +42,7 @@ If you are building on Windows, install Bonjour SDK from the Apple Store and mak
 *Here is an example of localConfig.json for Windows. 
 
 {
-         "roopaServerPath" : "C:\\Users\\joe\\Release\\runTime\\bin\\RoopaServer.exe",
+         "roopaServerPath" : "C:\\\Users\\\joe\\\Release\\\runTime\\\bin\\\RoopaServer.exe",
 }
 
 
