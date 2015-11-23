@@ -678,7 +678,7 @@
             },
             "technology": "FDM",
             "default_material_id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
-            "default_profile_id": "F5641294-BD6B-44F9-8C34-1DDEB9394296",
+            "default_profile_id": "F5641294-BD6B-44F9-8C34-1DDEB9395296",
             "firmware": {
                 "type": "Marlin",
                 "version": "1.0.0"
