@@ -662,6 +662,85 @@
 				"icons.100x100_id",
                 "build_volume.bed_file_id"
             ]
-        }
+        },
+        {
+            "id": "FA1118E1-7A59-FF4B-B938-D4D37788792F",
+            "version": 1,
+            "name": "Farm 1",
+            "manufacturer": "OCEAN",
+            "registration_url" : null,
+            "model_number": "1.0.0",
+            "icons": {
+                "16x16_id": "data/OCFarm1_16x16.png",
+                "32x32_id": "data/OCFarm1_32x32.png",
+                "50x50_id": "data/OCFarm1_50x50.png",
+                "100x100_id": "data/OCFarm1_100x100.png"
+            },
+            "technology": "FDM",
+            "default_material_id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
+            "default_profile_id": "F5641294-BD6B-44F9-8C34-1DDEB9395296",
+            "firmware": {
+                "type": "Marlin",
+                "version": "1.0.0"
+            },
+            "build_volume": {
+                "type": "Cylindrical",
+                "bed_size": [18.0, 18.0, 31.0],
+                "bed_offset": [-9, -9, 0.0],
+                "home_position": [0, 0, 0],
+                "park_position": [5, 5, 0],
+                "bed_file_id": "data/OCFarm1.zip"
+            },
+            "max_materials": 1,
+            "printable": {
+                "content": "application/gcode",
+                "thumbnail": "none",
+                "extension": "gcode",
+                "generates_supports": false
+            },
+            "supported_connections": [
+                {
+                    "type": "serial",
+                    "discovery": "serial",
+                    "protocol": "usb.serial",
+                    "baud" : 250000
+                }
+            ],
+            "preferred_connection": "serial",
+            "max_speeds": {
+                "x": 8,
+                "y": 8,
+                "z": 0.1
+            },
+            "software_info": {
+                "name": "OCEAN Farm",
+                "url": "http://ocean3d.farm"
+            },
+            "printer_capabilities": {
+                "num_extruders": 1,
+                "nozzle_temp_max": 240,
+                "nozzle_max_volume_per_sec": 150,
+                "nozzle_diameter": 0.04,
+                "nozzle_offset": [0, 0, 0],
+                "nozzle_retraction_length": 0.1,
+                "nozzle_retract_speed": 3,
+                "nozzle_lift_z": 0,
+                "nozzle_extra_length_on_restart": 0,
+                "e_speed_max": 2.0,
+                "nozzle_min_travel_on_retraction": 0.3,
+                "bed_temp_max": 80,
+                "xy_speed_max": 8,
+                "z_speed_max": 0.1,
+                "travel_feed_rate": 8,
+                "z_axis_feed_rate": 3
+            },
+            "_files": [
+                "icons.16x16_id",
+                "icons.32x32_id",
+                "icons.50x50_id",
+                "icons.100x100_id",
+                "build_volume.bed_file_id"
+            ]
+        }        
     ]
 }

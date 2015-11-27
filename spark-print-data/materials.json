@@ -36,6 +36,7 @@
             "printer_types": [
                 "F2F4B9B6-1D54-4A16-883E-B0385F27380C",
                 "3F64F6EC-A1DF-44AB-A22E-58C036F2F474",
+                "FA1118E1-7A59-FF4B-B938-D4D37788792F",
                 "F2F4B9B6-1D54-4A16-883E-B0385F27380D"
             ],
             "manufacturer": "unspecified",
@@ -64,7 +65,8 @@
             "composition": "ABS",
             "printer_types": [
                 "F2F4B9B6-1D54-4A16-883E-B0385F27380C",
-                "F2F4B9B6-1D54-4A16-883E-B0385F27380D"
+                "F2F4B9B6-1D54-4A16-883E-B0385F27380D",
+                "FA1118E1-7A59-FF4B-B938-D4D37788792F"
             ],
             "manufacturer": "unspecified",
             "website": "unspecified",
@@ -92,7 +94,8 @@
             "composition": "PLA",
             "printer_types": [
                 "152A72A1-45C7-11E5-B970-0800200C9A66",
-                "8301C8D0-7A59-4F4B-A918-D5D38888790F"
+                "8301C8D0-7A59-4F4B-A918-D5D38888790F",
+                "FA1118E1-7A59-FF4B-B938-D4D37788792F"
             ],
             "manufacturer": "unspecified",
             "website": "unspecified",
@@ -112,7 +115,7 @@
             "cost": 40,
             "rating": 5
         },
-                {
+        {
             "name": "PLA 1.75 mm",
             "technology": "FDM",
             "id": "081011F3-4DE4-4580-9456-5F862DCAC3F0",
@@ -121,6 +124,7 @@
             "printer_types": [
                 "8D586473-C1A9-451B-A129-2425357C6428",
                 "152A72A1-45C7-11E5-B970-0800200C9A66",
+                "FA1118E1-7A59-FF4B-B938-D4D37788792F",
                 "8301C8D0-7A59-4F4B-A918-D5D38888790F"
             ],
             "manufacturer": "unspecified",
