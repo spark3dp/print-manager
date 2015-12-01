@@ -20,9 +20,9 @@ Where the UUID is the printertype and the cssClass is a reference to
 
 https://github.com/spark3dp/print-manager/blob/sandbox/spark-print-mgr/console/css/console.css
 
-.printrbotplus {
-    background-image: url("../icons/printrbotplus.png");
-}
+            '.printrbotplus {
+                background-image: url("../icons/printrbotplus.png");
+            }
 
 You also need to add a png representing your printer as shown above.
 
