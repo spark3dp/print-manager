@@ -20,6 +20,15 @@
         },
         {
             "type"        : "serial",
+            "blackBox"    : false,
+            "description" : "OverLord",
+            "VID"         : 0403,
+            "PID"         : 6001,
+            "driverPath"  : "./drivers/overlord",
+            "printerType" : "D4H4F6G4-8J4H-5F6K-4F3J-4GK5FH4H56GF"
+        },
+        {
+            "type"        : "serial",
             "blackBox"    : true,
             "blackBoxTypes" : [
                 {
