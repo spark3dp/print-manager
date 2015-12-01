@@ -1,4 +1,4 @@
-Adding a Printer to the console.
+Adding a printer to the console.
 ===========
 
 The console application is a simple web application that displays enabled printers and offers simple control and monitoring.
