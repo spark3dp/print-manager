@@ -15,11 +15,14 @@ var express = require('express'),
     config = require('./config').config,
     TranslatorFactory = require('./printableTranslation/TranslatorFactory');
 
+
 var router = null;
 var trays = {};
 
 // Load the translators from the directory specified in the config.
 //
+
+logger.info("translators directory: " + config.translators_directory );
 TranslatorFactory.registerTranslators(config.translators_directory);
 
 var fields = { 'id': true,
@@ -234,6 +237,7 @@ function createTray( req, res, next )
     var p = roopa.run( 'createTray.lua', roopaInput, task );
     p.then( function(data)
             {
+
                 if( data.error )
                 {
                     var msg = data.error.code + " " + data.error.message;
@@ -447,7 +451,7 @@ function prepareTray( req, res, next )
                          'mesh_attrs' : outputAttributes,
                          'ready' : true,
                          'state' : "supported",
-                         'internal_file_id' : outputFile.getID() };
+                         'internal_file_id' : outputFile.getID()};
                 var outputTray = new Tray( data );
                 var result = outputTray.asJSON();
 
@@ -568,6 +572,8 @@ function translatePrintable(req, res, next) {
     }
 
     var translator = TranslatorFactory.getTranslator(printerType, profile, material, jobName);
+    
+    logger.info("translator jobName:" + jobName);
 
     if (!translator) {
         return next(new Errors.Request.BadRequestError('No translator found', 100902));
@@ -635,7 +641,9 @@ function generatePrintable(req, res, next) {
     var profile = profiles.find(tray.profile_id);
     var material = materials.find(tray.default_material_id);
     var typeInfo = printerType.asJSON();
+    logger.info("info df : " + typeInfo)
     printerType.mapFileResources(typeInfo);
+    logger.info('req body : ' + util.inspect(req.body))
 
     var generateRaw = req.body.hasOwnProperty('generate_raw') ? req.body.generate_raw : false;
 
@@ -645,7 +653,7 @@ function generatePrintable(req, res, next) {
     var translator;
     if (generateRaw) {
         translator = TranslatorFactory.getTranslator(printerType, profile, material);
-
+        logger.info("df translator :" + util.inspect(translator))
         if (!translator) {
             return next(new Errors.Request.BadRequestError('No translator found', 100902));
         }
@@ -669,7 +677,8 @@ function generatePrintable(req, res, next) {
         "printerType": typeInfo,
         "profile": profile.asJSON(),
         "defaultMaterial": material.asJSON(),
-        "raw": generateRaw
+        "raw": generateRaw,
+        
     };
 
     var task = new tasks.Task();
@@ -692,13 +701,14 @@ function generatePrintable(req, res, next) {
     //
     var translatorOutputFile;
     p.then(function (data) {
+           //logger.info("error df : "+ data.error )
             if (data.error) {
                 var msg = data.error.code + " " + data.error.message;
                 logger.error('generatePrintable failed: ' + msg);
                 task.setError(new Errors.General.OperationError(msg, 301204));
                 return;
             }
-
+           logger.info('generateRaw :' + generateRaw)
             if (generateRaw) {
                 // If Roopa generated a raw file, then we need to now use a translator
                 // to produce the device-dependent printable file.
@@ -716,12 +726,13 @@ function generatePrintable(req, res, next) {
 
                 translator.translate(roopaOutputFile.path, translatorOutputFile.path)
                     .then(function () {
-                        logger.info('generatePrintable worked! ' + translatorOutputFile);
+                        logger.info('generatePrintable worked!(1) ' + util.inspect(translatorOutputFile));
 
                         // Return both the device independent and dependent printable files.
                         //
                         var result = { 'raw_file_id': roopaOutputFile.getID(),
                             'file_id': translatorOutputFile.getID() };
+                          logger.info(' raw_file_id : ' + util.inspect(result) )
                         task.setResult(result);
                     })
                     .catch(function (err) {
@@ -730,7 +741,7 @@ function generatePrintable(req, res, next) {
                     });
             }
             else {
-                logger.info('generatePrintable worked! ' + roopaOutputFile);
+                logger.info('generatePrintable worked! (2)' + util.inspect (roopaOutputFile));
                 var result = { 'file_id': roopaOutputFile.getID() };
                 task.setResult(result);
             }

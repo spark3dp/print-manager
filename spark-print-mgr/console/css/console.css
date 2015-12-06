@@ -106,6 +106,10 @@
     background-image: url("../icons/printrbotplus.png");
 }
 
+.DreamMaker_OverLord {
+    background-image: url("../icons/DreamMaker_OverLord.png");
+}
+
 /* Button stylings */
 
 .btn:active {

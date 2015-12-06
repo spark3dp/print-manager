@@ -1,5 +1,5 @@
 { 
-	"PORT" : 9998,
+	"PORT" : 9997,
 	"logger_options" : {
         "log_file_name" : "print-manager.log",
         "log_file_location" : "",

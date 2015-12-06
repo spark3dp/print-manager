@@ -84,6 +84,8 @@ PrintableReader.prototype.readMessage = function (stream, messageProto) {
 };
 
 PrintableReader.prototype.read = function (filePath, options) {
+    
+    console.log("filePath : " + filePath )
     var self = this;
 
     return new Promise(function (resolve, reject) {
@@ -110,6 +112,7 @@ PrintableReader.prototype.read = function (filePath, options) {
             self.readBytesFromStream(stream, 4)
                 .then(function (bytes) {
                     var buffer = ProtoBuf.ByteBuffer.wrap(bytes, 'binary', true);
+                    console.log("buffer" + buffer)
                     if (buffer.readUint32() !== self.markerByte) {
                         reject(new Error('Not a valid printable file.'));
                         return;

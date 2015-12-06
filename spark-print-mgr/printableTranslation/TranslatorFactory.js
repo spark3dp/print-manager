@@ -17,8 +17,10 @@ TranslatorFactory.prototype.registerTranslator = function (translatorClass) {
 };
 
 TranslatorFactory.prototype.getTranslator = function (printerType, printerProfile, material, jobName) {
+    console.log("translator : " + this.translators)
     for (var i = 0; i < this.translators.length; ++i) {
         var translatorClass = this.translators[i];
+        console.log( "DF: " + i + "translatorClass : " +  translatorClass )
         try {
             if (translatorClass.canTranslate(printerType, printerProfile, material)) {
                 return new translatorClass(printerType, printerProfile, material, jobName);
