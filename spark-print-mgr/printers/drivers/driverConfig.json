@@ -69,6 +69,15 @@
             "PID"         : -1,
             "driverPath"  : "./drivers/printrbot",
             "printerType" : "152A72A1-45C7-11E5-B970-0800200C9A66"
+        },
+        {
+            "type"        : "serial",
+            "blackBox"    : false,
+            "description" : "DreamMaker Overlord",
+            "VID"         : 403,
+            "PID"         : 6001,
+            "driverPath"  : "./drivers/overlord",
+            "printerType" : "4A0F7523-071B-4F1E-A527-9DA49AECB807"
         }
     ]
 }
