@@ -9,7 +9,7 @@ On supported 3D printers, Print Manager converts a set of native 3D printer comm
  <a href="https://spark.autodesk.com/developers/" target="_blank">https://spark.autodesk.com/developers/</a>.</b>
  
 This repository has further information on the developers' portal at [Print Studio](https://spark.autodesk.com/developers/showcase/d0716b0d-5cb4-4959-9f10-032be8591c2a). 
-If you are a printer manufacturer interested in integrating your printer with Print Manager then see [this guide](https://spark.autodesk.com/developers/reference/printer-manufacturers/integrate-your-printer-model).
+If you are a printer manufacturer interested in integrating your printer with Print Manager then see [this guide](https://spark.autodesk.com/developers/reference/printer-manufacturers/integrate-your-printer/integrate-your-printer-model).
 
 For Print Manager to start you must download the geometry processor that is attached to the releases see [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)
 
