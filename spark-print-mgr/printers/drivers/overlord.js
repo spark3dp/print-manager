@@ -143,10 +143,10 @@ var overlordConfig = {
 };
 
 /**
- * Our module export is a creation function that returns an Ultimaker configured SerialPrinter
+ * Our module export is a creation function that returns an Overlord configured SerialPrinter
  */
-var createUltimaker = function (data) {
+var createOverlord = function (data) {
     return new GcodeClient(data, overlordConfig);
 };
 
-module.exports = createUltimaker;
+module.exports = createOverlord;
