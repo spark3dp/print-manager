@@ -770,7 +770,7 @@
                  "bed_offset": [-8,-8,0],
                  "home_position": [0, 0, 0],
                  "park_position": [0, 0, 250],
-                 "bed_file_id": "data/DreamMaker_OverLord.zip"
+                 "bed_file_id": "data/OverLord.zip"
              },
              "max_materials": 1,
              "printable": {
