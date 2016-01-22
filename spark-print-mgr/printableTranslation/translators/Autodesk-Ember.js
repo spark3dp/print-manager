@@ -122,6 +122,13 @@ function getParam( profile, emberName, name, convCode, customConv )
         
         value = handleDecimals( emberName, value )
     }
+    else if( typeof value == "boolean" )
+    {
+        if( value )
+            return 1;
+        else
+            return 0;
+    }
  
     return value;
 }
@@ -180,7 +187,9 @@ var mapping = [
 	[ "ModelSeparationRotJerk", "model_layer_separation_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
     [ "ModelSeparationZJerk", "model_layer_separation_z-axis_maximum_jerk", null, 60*60*60*10 ],
     [ "ModelApproachRotJerk", "model_layer_approach_slide_maximum_jerk", null, 60*60*60* 180/Math.PI/10000 ],
-    [ "ModelApproachZJerk", "model_layer_approach_z-axis_maximum_jerk", null, 60*60*60*10 ]
+    [ "ModelApproachZJerk", "model_layer_approach_z-axis_maximum_jerk", null, 60*60*60*10 ],
+    
+    [ "RotateHomeOnApproach", "use_rotation_homing_for_approach" ]
 
 ];
 
