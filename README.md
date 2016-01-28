@@ -17,8 +17,8 @@ When unzipped please edit the localConfig.json file to use this.
 
 
 ## Quick Start  
-1. Install node version 0.10.35 (not the latest) found here:
-   http://blog.nodejs.org/2014/12/23/node-v0-10-35-stable/
+1. Install node version 0.11.16 (not the latest) found here:
+   https://nodejs.org/download/release/v0.11.16/
    NOTE: C++ platform tools are required to build some of the modules.
 2. CD spark-print-mgr 
 3. Add localConfig.json to the spark-print-mgr directory with the following content (it contains the location to the prep server)
