@@ -24,7 +24,7 @@ When unzipped please edit the localConfig.json file to use this.
 3. Add localConfig.json to the spark-print-mgr directory with the following content (it contains the location to the prep server)
 
 {
-         "roopaServerPath" : "C:/SPARK/Release/runTime/RoopaServer.app/Contents/MacOS/RoopaServer"
+         "roopaServerPath" : "/Users/bob/Documents/RoopaServer.app/Contents/MacOS/RoopaServer"
 }
 
    The above will work for Mac OS*.
