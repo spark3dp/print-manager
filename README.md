@@ -1,6 +1,8 @@
 print-manager
 ===========
 
+## This project is no longer being maintained or updated.
+
 Print Manager is a desktop utility which identifies and connects 3D printers and converts files for delivery to a particular model of 3D printer. The utility is used by Print Studio.
 
 On supported 3D printers, Print Manager converts a set of native 3D printer commands into a format recognized by the supported printer models, allowing a "printable" file to be sent to a specific printer model.
@@ -24,7 +26,7 @@ When unzipped please edit the localConfig.json file to use this.
 3. Add localConfig.json to the spark-print-mgr directory with the following content (it contains the location to the prep server)
 
 {
-         "roopaServerPath" : "C:/SPARK/Release/runTime/RoopaServer.app/Contents/MacOS/RoopaServer"
+         "roopaServerPath" : "/Users/bob/Documents/RoopaServer.app/Contents/MacOS/RoopaServer"
 }
 
    The above will work for Mac OS*.
