@@ -7,7 +7,7 @@ Print Manager is a desktop utility which identifies and connects 3D printers and
 
 On supported 3D printers, Print Manager converts a set of native 3D printer commands into a format recognized by the supported printer models, allowing a "printable" file to be sent to a specific printer model.
 
-<b>To download print studio, please see installer attached to [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)<b>
+<b>To download print studio, please see installer attached to [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)</b>
  
 If you are a printer manufacturer interested in integrating your printer with Print Manager then read the PDF  "Adding a printer to Spark PrintManager"
 
