@@ -11,7 +11,7 @@ On supported 3D printers, Print Manager converts a set of native 3D printer comm
  
 If you are a printer manufacturer interested in integrating your printer with Print Manager then read the PDF  "Adding a printer to Spark PrintManager"
 
-For Print Manager to start you must download the geometry processor that is attached to the releases see [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)
+For Print Manager to start you must download the RoopaServer that is attached to the releases see [Print Manager Releases](https://github.com/spark3dp/print-manager/releases)
 
 When unzipped please edit the localConfig.json file to use this.
 
